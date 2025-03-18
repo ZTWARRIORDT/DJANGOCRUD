@@ -14,7 +14,23 @@
         <section class="card card-body">
             <h1 class="display-1 text-center">DJANGO APP</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem magnam molestiae sit adipisci eius iusto, eligendi asperiores illo ab quisquam.</p>
+            {% if user.is_authenticated %}
             <div class="text-center">
+                <a class="btn btn-primary" href="/tasks/">
+                    Tasks Pending
+                </a>
+                <a class="btn btn-primary" href="/tasks_completed/">
+                    Tasks completed
+                </a>
+                <a class="btn btn-primary" href="/tasks/create/">
+                    Create task
+                </a>
+                <a class="btn btn-primary" href="/logout/">
+                    Logout
+                </a>
+            {% else %}
+            <div class="text-center">
+                
                 <a class="btn btn-primary" href="/signin/">
                     Signin
                 </a>
@@ -22,7 +38,7 @@
                     Signup
                 </a>
             </div>
-            
+            {% endif %}
         </section>
     </main>
     
